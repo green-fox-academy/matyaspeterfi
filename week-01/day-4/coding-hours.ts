@@ -11,10 +11,10 @@
 
 let totalCodingHours: number = (17*5)*6;
 
-console.log(totalCodingHours, 'hours are spent with coding by a student in a semester');
+console.log(totalCodingHours + 'hours are spent with coding by a student in a semester');
 
 let totalHours: number = 17*52;
 
 let percentage: number = ((totalCodingHours/totalHours)*100);
 
-console.log(Math.round(percentage), "% of work hours are spent with coding")
+console.log(Math.round(percentage) + "% of work hours are spent with coding")
