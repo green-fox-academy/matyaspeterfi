@@ -1,5 +1,5 @@
 'use strict'
 
-let myName = "Mat Peterfi";
+let myName: string = "Mat Peterfi";
 
 console.log("Hello " + myName);
