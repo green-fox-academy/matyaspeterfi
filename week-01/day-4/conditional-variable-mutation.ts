@@ -40,7 +40,7 @@ console.log(out2)
 
 let c: number = 123;
 let credits: number = 100;
-let isBonus: boolean = false;
+let isBonus: boolean = credits > c;
 
 // if credits are at least 50,
 // and is_bonus is false decrement c by 2
@@ -56,7 +56,7 @@ if (credits >= 50 && isBonus == false) {
 
     (c--);
 
-} else if (isBonus = true){
+} else if (isBonus == true){
 
     (c);
 }

@@ -15,3 +15,4 @@ while (loopNumber < 101) {
 for (let loopCount:number = 0; loopCount<101; loopCount++) {
     console.log(honestMe);
 }
+
