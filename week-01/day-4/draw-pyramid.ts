@@ -1,7 +1,6 @@
 'use strict';
 
 let lineCount: number = 4;
-let columnCount: number = 4;
 
 // Write a program that draws a
 // pyramid like this:
