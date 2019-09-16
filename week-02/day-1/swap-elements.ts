@@ -8,9 +8,4 @@ let [first, second, third] = abc
 
 abc = [first, second, third] = [third, second, first]
 
-
-
-
-
-
 console.log(abc)
