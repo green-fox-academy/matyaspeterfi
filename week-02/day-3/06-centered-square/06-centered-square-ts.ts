@@ -9,4 +9,4 @@ const ctx = canvas.getContext('2d');
 
 
 ctx.strokeStyle = "green";
-ctx.strokeRect(((canvas.width/2) - 10), ((canvas.height/2) -10), 10, 10);
+ctx.strokeRect(((canvas.width/2) - 5), ((canvas.height/2) -5), 10, 10);
