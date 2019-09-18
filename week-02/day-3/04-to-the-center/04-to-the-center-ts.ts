@@ -11,7 +11,7 @@ const ctx = canvas.getContext('2d');
 // Draw at least 3 lines with that function using a loop.
 
 
-function zoltan(x, y):number{
+function zoltan(x:number, y:number):number{
 
     ctx.beginPath();
     ctx.moveTo(x, y);
@@ -21,5 +21,6 @@ function zoltan(x, y):number{
     return
 };
 
-zoltan(11, 21);
+for(let i = 0; i < 4; i++){
+    zoltan(50 + (50 * i), 50 +(50 * i));
 
