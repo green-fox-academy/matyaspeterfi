@@ -11,26 +11,24 @@ const ctx = canvas.getContext('2d');
 // Create a loop that fills the canvas with a rainbow of colored squares.
 
 let colors: string[] = ['blue', 'red', 'green', 'pink', 'yellow', 'cyan'];
-
+let squareSize: number = 30;
+let squareNumber: number = canvas.width/squareSize;
 
 
 function erno(size:number, color:string):number{
    
 
-    for(let i = size; i >= 0; i--){
 
-        ctx.strokeStyle = color;
-        ctx.strokeRect(canvas.width/2 - size/2, canvas.height/2 - size/2, size, size);
+        ctx.fillStyle = color;
+        ctx.fillRect(canvas.width/2 - size/2, canvas.height/2 - size/2, size, size);
 
-    }
 
 
     return
 };
 
+for(let i = squareNumber; i >= 0; i--){
 
-for(let i = 50; i >= 0; i--){
 
-
-    erno(1000 - (i * 50), colors[Math.floor(Math.random()*colors.length)]);
+    erno((i * squareSize), colors[Math.floor(Math.random()*colors.length)]);
 };
