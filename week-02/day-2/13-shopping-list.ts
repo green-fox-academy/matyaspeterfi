@@ -22,4 +22,4 @@ function doWeHave(item:string){
 //console.log("Yes we have " + item + " on the list!")
 
 
-doWeHave("poop");
+doWeHave("Eggs");
