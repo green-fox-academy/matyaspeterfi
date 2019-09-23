@@ -40,4 +40,4 @@ function doWeKnow(name){
     
 };
 
-doWeKnow("Chris E. Myers");
+doWeKnow("John K. Miller");
