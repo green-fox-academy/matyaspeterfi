@@ -77,9 +77,6 @@ function below300(input:{}){
 
 below300(products);
 
-
-//WTF is the below not working as intended? The lower if() reads success = true even if above it everywhere it reads as false.
-
 function forAmount (input: number){
     let success:boolean = false;
     let stuff: string = "";
@@ -87,13 +84,13 @@ function forAmount (input: number){
         if(products[k] === input){
             success = true;
             stuff = k
-        }else(success = false)
-        console.log(success)
+        }else(success === false)
+        //console.log(success)
     }
-    console.log(success)
-    if(success = true){
+    //console.log(success)
+    if(success == true){
         console.log("You can buy " + stuff + " for " + input);
-    }else if (success = false)
+    }else if (success == false)
         {console.log("You can't buy anything for " + input + "! :(")}
 };
 
@@ -106,7 +103,7 @@ function cheapest(input:{}){
         if(input[l] <= counter){
             counter = input[l];
             cheapProduct = l;
-        }console.log(counter);
+        }//console.log(counter);
     }
     console.log("The cheapest product is " + cheapProduct + " with the price of " + counter + " yo.")
     
