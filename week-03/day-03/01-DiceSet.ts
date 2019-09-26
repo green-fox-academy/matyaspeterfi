@@ -41,12 +41,13 @@ let diceSet = new DiceSet();
 
 let currentDie: number[];
 
-diceSet.roll()
+diceSet.roll();
 
 for (let i = 0; i < diceSet.numOfDices; i++){
 
-    while (diceSet.getCurrent(i) != 6)
-    (diceSet.reroll(i))
-}
+    while (diceSet.getCurrent(i) != 6){
+    (diceSet.reroll(i));
+    }
+};
 
-console.log(diceSet.getCurrent())
+console.log(diceSet.getCurrent());
