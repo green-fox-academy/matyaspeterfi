@@ -16,8 +16,8 @@ class PetrolStation {
     public _stationGasAmount: number = 5000;
 
     refill(car: Car){
-        this._stationGasAmount = this._stationGasAmount - (car._capacity - car._gasAmount);
-        car._gasAmount = car._gasAmount + (car._capacity - car._gasAmount);
+        this._stationGasAmount -= (car._capacity - car._gasAmount);
+        car._gasAmount += (car._capacity - car._gasAmount);
         
     }
 
