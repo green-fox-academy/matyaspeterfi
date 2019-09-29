@@ -1,7 +1,5 @@
 'use strict';
 
-let lineCount: number = 25;
-
 // Write a program that draws a square like this:
 //
 // %%%%%%
@@ -14,19 +12,32 @@ let lineCount: number = 25;
 // The square should have as many lines as lineCount is
 
 
-let topBottom:string = "%%%%%%"
-let middle:string = "%    %"
+'use strict'
 
+class square{
+    
+    drawSquare(lineCount:number){
+        let topBottomChar:string = "";
+        let space:string = "";
 
-console.log(topBottom)
+        for(let i:number = 0; i < lineCount; i++){
+            topBottomChar += "%"
+        }console.log(topBottomChar)
+        
+        for(let j:number = 0; j < lineCount-2; j++){    
+            for (let i = 0; i < lineCount-2; i++){
+                space += " ";
+            }console.log("%" + space + "%")
+            space = ""
+        }
 
-for (let i:number = 0; i < ((lineCount-(lineCount-1))); i++){
-
-    for (let j:number = 0; j < (lineCount -2); j++){
-
-        console.log(middle);
+        topBottomChar = "";
+        for(let i:number = 0; i < lineCount; i++){
+            topBottomChar += "%"
+        }console.log(topBottomChar);
     }
-
-    console.log(topBottom);
-
 }
+
+let draw = new square;
+
+draw.drawSquare(50)
