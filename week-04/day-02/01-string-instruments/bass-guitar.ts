@@ -8,10 +8,8 @@ export class BassGuitar extends StringedInstrument {
     return "Duum-duum-duum";
   }
 
-  constructor(numberOfString: number = 4, name: string = "Bass Guitar") {
-    super()
-    this._name = name;
-    this._numberOfString = numberOfString;
+  constructor(numberOfString: number = 4) {
+    super(numberOfString, "Bass Guitar");
   }
 
 }

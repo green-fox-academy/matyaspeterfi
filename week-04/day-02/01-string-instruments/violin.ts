@@ -8,10 +8,8 @@ export class Violin extends StringedInstrument {
     return "Screech";
   }
 
-  constructor(numberOfString = 4, name = "Violin") {
-    super()
-    this._name = name;
-    this._numberOfString = numberOfString;
+  constructor(numberOfString = 4) {
+    super(numberOfString, "Violin")
   }
 
 }

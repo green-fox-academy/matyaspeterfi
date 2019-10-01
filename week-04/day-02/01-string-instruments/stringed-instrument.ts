@@ -11,4 +11,8 @@ export abstract class StringedInstrument extends Instrument {
   play() {
     console.log((`${this._name} a ${this._numberOfString}-stringed instrument that goes that goes ${this.sound()}`))
   }
+  constructor(numberOfString:number, name?:string){
+    super(name);
+    this._numberOfString = numberOfString;
+  }
 }
