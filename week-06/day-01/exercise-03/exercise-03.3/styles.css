@@ -5,13 +5,13 @@ body {
 
 .container {
     display: flex;
-    flex-direction: row;
+    padding: 0;
+    flex-flow: row;
     height: 385px;
     width: 857px;
     background-color: #ffd62a;
-    justify-content: left;
-    align-items: center;
-    padding: 0;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
 .item {
@@ -19,6 +19,6 @@ body {
     width: 100px;
     background-color: #b02aff;
     list-style: none;
-    padding: 0px;
-    margin: 0 5px 0 0;
+    padding: 0;
+    margin: 0 0 0 5px;
 }
