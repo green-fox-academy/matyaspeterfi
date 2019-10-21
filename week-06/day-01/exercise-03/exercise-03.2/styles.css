@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    padding: 0;
+    flex-flow: row;
+    height: 385px;
+    width: 857px;
+    background-color: #ffd62a;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item {
+    height: 120px;
+    width: 120px;
+    background-color: #b02aff;
+    list-style: none;
+    padding: 0px;
+}
