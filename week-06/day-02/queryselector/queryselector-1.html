@@ -38,10 +38,17 @@
 
     console.log('--------------');
 
-    let businessLamp = document.querySelectorAll('.asteroid' && '.big');
-    console.log(businessLamp);
+    let businessLamp = document.querySelectorAll('.big');
+    Array.prototype.forEach.call(businessLamp, function(element) {
+        console.log(element.innerText)
+    });
 
     console.log('--------------');
+
+    let conceitedKing = document.querySelectorAll('.container > div');
+    Array.prototype.forEach.call(businessLamp, function(element) {
+        alert(element.innerText)
+    });
 </script>
 
 </html>
