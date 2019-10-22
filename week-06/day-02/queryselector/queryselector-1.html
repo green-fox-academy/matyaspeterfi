@@ -47,7 +47,14 @@
 
     let conceitedKing = document.querySelectorAll('.container > div');
     Array.prototype.forEach.call(businessLamp, function(element) {
-        alert(element.innerText)
+        // alert(element.innerText)
+    });
+
+    console.log('--------------');
+
+    let noBusiness = document.getElementsByTagName('div');
+    Array.prototype.forEach.call(noBusiness, function(element) {
+        console.log(element.innerText);
     });
 </script>
 
