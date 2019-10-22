@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Workshop: Attributes</title>
+</head>
+
+<body>
+
+    <img src="https://static.wixstatic.com/media/f4461b_83457ca5dd844c71a760d36e6583d0ff.png/v1/fill/w_168,h_168,al_c,usm_0.66_1.00_0.01/f4461b_83457ca5dd844c71a760d36e6583d0ff.png">
+    <a href="http://www.themostamazingwebsiteontheinternet.com/">The Best Website Ever</a>
+    <button>Click me!</button>
+    <button class="this-one">Click me!</button>
+
+    <!-- You can work in the html or in a separate js file. Like:
+    <script>
+      Write the image's url to the console.
+      Replace the image with a picture of your favorite animal.
+      Make the link point to the Green Fox Academy website.
+      Disable the second button.
+      Replace its text with 'Don't click me!'.
+    </script>
+    OR
+    <script src="attribute-1.js"></script> -->
+
+</body>
+
+<script>
+    let image = document.getElementsByTagName('img');
+    let imageURL = image[0].src;
+    let url = document.getElementsByTagName('a');
+    let button = document.getElementsByClassName('this-one');
+
+    console.log(imageURL);
+    console.log(button);
+
+    image[0].setAttribute('src', 'https://petco.scene7.com/is/image/PETCO/cathp-092619-img-new-pet-adult-256w-256h-d');
+    url[0].setAttribute('href', 'https://www.greenfoxacademy.com/?gclid=EAIaIQobChMI_IDnv4Ow5QIVjsqyCh0fVAsvEAAYASAAEgL6W_D_BwE');
+    button[0].setAttribute('disabled', 'true');
+    button[0].firstChild.textContent = 'don\'t click me!';
+</script>
+
+</html>
