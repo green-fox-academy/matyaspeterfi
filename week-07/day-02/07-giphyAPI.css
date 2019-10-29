@@ -1,0 +1,15 @@
+#gif{
+  display: inline;
+  background-color: red;
+}
+
+#window{
+  width: 300px;
+  height: 100px;
+  background-color: green;
+}
+
+img{
+  width: 100px;
+  height: 100px;
+}
