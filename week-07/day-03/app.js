@@ -4,8 +4,12 @@ const PORT = 8080;
 const path = require('path');
 app.use(express.static('assets'));
 
+let bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: false }));
+const jsonParser = bodyParser.json();
+
 app.listen(PORT, () => {
-  console.log(`No listening on port ${PORT}`)
+  console.log(`Now listening on port ${PORT}`)
 });
 
 app.get('/', function (req, res) {
@@ -14,7 +18,7 @@ app.get('/', function (req, res) {
 
 //***********DOUBLING****************/
 app.get('/doubling', (req, res) => {
-let output;
+  let output;
   if (req.query.input) {
     let input = req.query.input;
     let result = input * 2;
@@ -32,7 +36,7 @@ let output;
 //***********GREETER****************/
 
 app.get('/greeter', (req, res) => {
-
+  // console.log(req.query.title);
   let name = req.query['name'];
   let title = req.query.title;
   let paramsToCheck = [
@@ -44,7 +48,7 @@ app.get('/greeter', (req, res) => {
 
   paramsToCheck.forEach((element) => {
     if (req.query[element] == undefined) {
-        missingParameters.push(element); 
+      missingParameters.push(element);
     }
   });
 
@@ -59,7 +63,7 @@ app.get('/greeter', (req, res) => {
   }
   res.send(result)
 
-  
+
   // if (name == undefined && title == undefined) {
   //   res.send({
   //     'error': 'Please provide a name and a title!'
@@ -81,7 +85,7 @@ app.get('/greeter', (req, res) => {
 
 //***********APPEND A****************//
 
-app.get('/appenda', (req, res)=>{
+app.get('/appenda', (req, res) => {
   res.status(404)
   res.send({
     'response': '404: Not Found'
@@ -91,8 +95,43 @@ app.get('/appenda/:appendable', (req, res) => {
   let input = req.params.appendable;
   res.send({
     'appended': `${input}a`
-  })
-})
+  });
+});
 
 //***********DO UNTIL****************//
 
+app.post('/dountil/:parameter', jsonParser, (req, res) => {
+  let input = req.body.until;
+  let parameter = req.params.parameter;
+  let result;
+  console.log(parameter);
+  console.log(input);
+
+
+  if (input == undefined) {
+    result = {
+      'error': 'Please provide a number!'
+    }
+  } else if (parameter == 'sum') {
+    let total = 0;
+    let sumFunc = (number) => {
+      for (let i = 1; i <= number; i++) {
+        total += i;
+      } return total
+    }
+    result = {
+      'result': sumFunc(input)
+    }
+  } else if (parameter == 'factor') {
+    let factorio = (number) => {
+      let total = 1
+      for (let i = 1; i <= number; i++) {
+        total *= i;
+      }return total
+    }
+    result = {
+      'result': factorio(input)
+    }
+  }
+  res.send(result)
+});
