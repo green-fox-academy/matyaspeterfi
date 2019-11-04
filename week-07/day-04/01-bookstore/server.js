@@ -28,24 +28,6 @@ conn.connect((err) => {
   console.log('Connection Established');
 });
 
-conn.query('SELECT book_name FROM book_mast;', function(err, rows){
-  if(err){
-    console.log(err.toString());
-  }
-  console.log('Titles data received from Db\n');
-  titles = rows;
-  return
-})
-
-conn.query("SELECT book_name, aut_name, cate_descrip, pub_name, book_price FROM book_mast LEFT JOIN author ON book_mast.aut_id = author.aut_id LEFT JOIN category ON book_mast.cate_id = category.cate_id LEFT JOIN publisher ON book_mast.pub_id = publisher.pub_id;", function(err, rows){
-  if(err){
-    console.log(err.toString());
-  }
-  console.log('Bookinfo data received from Db\n');
-  bookinfo = rows;
-  return
-})
-
 //---express code---//
 
 app.listen(PORT, () => {
@@ -53,7 +35,15 @@ app.listen(PORT, () => {
 })
 
 app.get('/titles', (req, res) => {
-
+  conn.query('SELECT book_name FROM book_mast;', function(err, rows){
+    if(err){
+      console.log(err.toString());
+    }
+    console.log('Titles data received from Db\n');
+    titles = rows;
+    return
+  })
+  
   res.send(titles);
 });
 
@@ -62,5 +52,18 @@ app.get('/', (req, res) => {
 })
 
 app.get('/bookinfo', (req, res) => {
+  console.log(req.query[0]);
+
+  conn.query(`SELECT book_name, aut_name, cate_descrip, pub_name, book_price
+  FROM book_mast LEFT JOIN author ON book_mast.aut_id = author.aut_id
+  LEFT JOIN category ON book_mast.cate_id = category.cate_id
+  LEFT JOIN publisher ON book_mast.pub_id = publisher.pub_id;`, function(err, rows){
+    if(err){
+      console.log(err.toString());
+    }
+    console.log('Bookinfo data received from Db\n');
+    bookinfo = rows;
+    return
+  })
   res.send(bookinfo);
 })

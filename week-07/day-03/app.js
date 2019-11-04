@@ -106,6 +106,7 @@ app.post('/dountil/:parameter', jsonParser, (req, res) => {
   let result;
   console.log(parameter);
   console.log(input);
+  console.log(Object.keys(req.body)[0])
 
 
   if (input == undefined) {
