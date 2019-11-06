@@ -14,6 +14,5 @@ btn.addEventListener('click', (event) => {
     if(clickCounter > 2){
       message.innerHTML = '5 seconds elapsed and clicked 3 times'
     }
-
   }
 })
