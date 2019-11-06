@@ -1,0 +1,53 @@
+body{
+  background-color: lightgray;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+#container{
+  min-height: 500px;
+  height: 50%;
+  min-width: 500px;
+  width: 50%;
+  justify-content: center;
+  margin: 0 auto;
+  
+}
+
+#login{
+  display: flex;
+  flex-flow: column;
+  margin: 30px;
+  padding: 30px;
+  background-color: white;
+  border-radius: 4px;
+  min-height: 380px;
+
+}
+
+label{
+  margin: 10px 0 0 0;
+}
+
+#login h1{
+  font-weight: normal;
+}
+
+input[type="text"],
+input[type="password"]{
+  margin: 10px 0;
+  height: 40px;
+}
+
+#login #forgot{
+  text-align: right;
+  margin:5px;
+}
+
+#login #submit{
+  width: 120px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: black;
+  color: white;
+  margin: 50px 0;
+}
