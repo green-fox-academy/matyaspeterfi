@@ -1,0 +1,43 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#outContainer{
+  display:flex;
+  flex-flow: column;
+  background-color: pink;
+  border-radius: 10px;
+  width: 460px;
+  height: 230px;
+  margin: 25px auto;
+  box-shadow: rgba(71, 72, 143, 0.699) 20px 20px;
+}
+
+#selContainer{
+  margin: 0 40px;
+  width: 0 auto;
+  height: 70px;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+
+}
+
+select{
+  width:35%;
+  height: 60%;
+  margin: 3px;
+  font-size: 12;
+}
+
+#outContainer h3{
+  margin: 30px 0 15px 40px;
+}
+
+#result{
+margin: 10px 0 0 40px;
+font-size: 14px;
+}
