@@ -37,6 +37,9 @@ input[type="password"]{
   margin: 10px 0;
   height: 40px;
 }
+input:focus{
+  outline-color: green;
+}
 
 #login #forgot{
   text-align: right;
