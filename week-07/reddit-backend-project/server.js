@@ -68,18 +68,50 @@ app.post('/posts', jsonParser, (req, res) => {
     console.log('Post added to DB');
   })
 
-  //current status: post is being added correctly, next step is to craft the response.
-
   conn.query(`SELECT post_id, title, url, timestamp, score 
-              FROM posts 
-              ORDER BY post_id 
-              DESC LIMIT 1;`, function (err, rows2) {
+  FROM posts 
+  ORDER BY post_id 
+  DESC LIMIT 1;`, function (err, rows2) {
     if (err) {
       console.log(err.toString());
     }
     response = rows2[0];
-    console.log(response);
+    // console.log(response);
     res.send(response);
   })
-
 })
+
+app.put('/posts/:id/:action', (req, res) =>{
+  res.status(200);
+  res.header({'Content-Type' : "application/json"})
+  let id = req.params.id;
+  let score = 0;
+  let action = req.params.action;
+  let response = '';
+
+  conn.query(`SELECT score FROM posts WHERE post_id = ${id};`, function(err, rows3){
+    if (err){
+      console.log(err.toString());
+    }
+    score = rows3[0].score;
+    if(action == 'upvote'){
+      score++
+    }else if (action == 'downvote'){
+      score--
+    };
+    conn.query(`UPDATE posts SET score = ${score} 
+                WHERE post_id = ${id}`, function(err, rows4){
+      if(err){
+        console.log(err.toString());
+      }
+      conn.query(`SELECT post_id, title, url, timestamp, score 
+                  FROM posts 
+                  WHERE post_id = ${id};`, function(err, rows5){
+        if (err){
+          console.log(err.toString());
+        }response = rows5[0];
+        res.send(response);
+      });
+    });
+  });
+});
