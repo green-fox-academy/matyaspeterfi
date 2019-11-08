@@ -42,7 +42,6 @@ app.get('/posts', (req, res) => {
 
   res.status(200);
   res.set('Content-Type', 'application/json')
-
   conn.query('SELECT * FROM posts;', function (err, rows) {
     if (err) {
       console.log(err.toString());
@@ -67,7 +66,6 @@ app.post('/posts', jsonParser, (req, res) => {
     }
     console.log('Post added to DB');
   })
-
   conn.query(`SELECT post_id, title, url, timestamp, score 
   FROM posts 
   ORDER BY post_id 
@@ -81,35 +79,35 @@ app.post('/posts', jsonParser, (req, res) => {
   })
 })
 
-app.put('/posts/:id/:action', (req, res) =>{
+app.put('/posts/:id/:action', (req, res) => {
   res.status(200);
-  res.header({'Content-Type' : "application/json"})
+  res.header({ 'Content-Type': "application/json" })
   let id = req.params.id;
   let score = 0;
   let action = req.params.action;
   let response = '';
 
-  conn.query(`SELECT score FROM posts WHERE post_id = ${id};`, function(err, rows3){
-    if (err){
+  conn.query(`SELECT score FROM posts WHERE post_id = ${id};`, function (err, rows3) {
+    if (err) {
       console.log(err.toString());
     }
     score = rows3[0].score;
-    if(action == 'upvote'){
+    if (action == 'upvote') {
       score++
-    }else if (action == 'downvote'){
+    } else if (action == 'downvote') {
       score--
     };
     conn.query(`UPDATE posts SET score = ${score} 
-                WHERE post_id = ${id}`, function(err, rows4){
-      if(err){
+                WHERE post_id = ${id}`, function (err, rows4) {
+      if (err) {
         console.log(err.toString());
       }
       conn.query(`SELECT post_id, title, url, timestamp, score 
                   FROM posts 
-                  WHERE post_id = ${id};`, function(err, rows5){
-        if (err){
+                  WHERE post_id = ${id};`, function (err, rows5) {
+        if (err) {
           console.log(err.toString());
-        }response = rows5[0];
+        } response = rows5[0];
         res.send(response);
       });
     });
