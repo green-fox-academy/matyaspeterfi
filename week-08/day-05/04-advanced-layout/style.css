@@ -17,7 +17,7 @@ header{
   background-color: purple;
   grid-column: 1/11;
   grid-row: 1/2;
-  display: flex;
+  display: flex;c
 }
 
 .menu-element{
