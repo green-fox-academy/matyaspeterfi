@@ -1,1 +1,4 @@
 <p>weather-search works!</p>
+<input class="searchInput" placeholder="Put your city code here" [(ngModel)]="userInput">
+<button (click)="doSearch()">Search</button>
+<app-weather *ngFor="let item of citySearchInfo" [weatherInfo]="item"></app-weather>

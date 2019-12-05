@@ -12,9 +12,10 @@ export class WeatherApiService {
 
   constructor(private http: HttpClient) { }
 
-  apiCall(): Observable<WeatherData> {
-    return this.http.get(`${environment.defUrl}${environment.defCities}${environment.defUnits}${environment.apiKey}`)
-    .pipe(map(result => {return result['list']})
-    )
+  apiCall(searchType: string, city: string): Observable<WeatherData> {
+      console.log('Group Search');
+      return this.http.get(`${environment.defUrl}${searchType}${city}${environment.defUnits}${environment.apiKey}`)
+      // .pipe(map(result => { return result['list'] })
+      // );
   }
 }
