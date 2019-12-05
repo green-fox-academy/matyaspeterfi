@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="cityCont">
+    <h2 class="cityName">{{weatherInfo.name}}</h2>
+    <p class="citySub">{{weatherInfo.sys.country}}</p>
+  </div>
+  <div class="tempCont">
+    <h1 class="temp">{{weatherInfo.main.temp | number: '1.0-0'}}º</h1>
+    <img src="../../assets/{{weatherInfo.weather[0].main}}.png" class="icon">
+  </div>
+</div>
