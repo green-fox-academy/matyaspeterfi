@@ -19,7 +19,6 @@ export class WeatherContainerComponent implements OnInit {
   ngOnInit() {
     this.wap.apiCall(environment.searchTypeGroupId, environment.defCities).subscribe((response) => {
       this.weatherInfo = response['list'];
-      console.log(response);
     })
   }
 }

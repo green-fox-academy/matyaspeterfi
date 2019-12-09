@@ -5,6 +5,7 @@ export const environment = {
   defUnits: '&units=metric',
   searchTypeCity: 'weather?q=',
   searchTypeGroupId: 'group?id=',
+  searchTypeForecastId: 'forecast?id=',
   apiKey: '&APPID=a30afdf2b8846233b821a36c1ae9cf05',
 
   singleCity: 'id=2172797',

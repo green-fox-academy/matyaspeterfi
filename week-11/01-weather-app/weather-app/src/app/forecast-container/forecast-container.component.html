@@ -1,0 +1,5 @@
+<p>forecast-container works!</p>
+<h2>{{cityName}}</h2>
+<div class="cards" *ngFor="let item of forecastInfo; let i = index">
+  <app-forecast-card *ngIf="i % 8 ===0"[weatherInfo]='item'></app-forecast-card>
+</div>

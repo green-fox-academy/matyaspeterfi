@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" [routerLink]="['', weatherInfo.id]">
   <div class="cityCont">
     <h2 class="cityName">{{weatherInfo.name}}</h2>
     <p class="citySub">{{weatherInfo.sys.country}}</p>

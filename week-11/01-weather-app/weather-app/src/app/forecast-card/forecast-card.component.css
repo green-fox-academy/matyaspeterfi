@@ -1,0 +1,29 @@
+.container{
+  min-width: 250px;
+  max-width: 350px;
+  display: flex;
+  flex-flow: row;
+  padding: 10px 10px;
+  margin: 20px auto;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: rgba(211, 211, 211, 0.904) 0px 3px 2px 2px;
+}
+
+.cityCont{
+  display: flex;
+  flex-flow: column;
+  align-items: left;
+  margin-left: 10px;
+}
+
+.tempCont{
+  display: flex;
+  flex-flow: row;
+}
+
+.icon{
+  height: 80px;
+}

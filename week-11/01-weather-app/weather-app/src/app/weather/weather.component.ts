@@ -12,7 +12,7 @@ export class WeatherComponent implements OnInit {
   @Input() weatherInfo: any;
   weatherCall: any;
 
-  constructor(private wap: WeatherApiService) {}
+  constructor() {}
 
   ngOnInit() {
   }
