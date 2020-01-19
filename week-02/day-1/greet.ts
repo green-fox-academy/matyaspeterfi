@@ -5,12 +5,10 @@
 //     -  Greeting is printing e.g. `Greetings, dear Green Fox`
 // -  Greet `nameToGreet`
 
-let nameToGreet:string = "Green Fox"
+let nameToGreet: string = "Green Fox"
 
-function Greet(a) {
-
-    console.log("Greetings, dear " + a)
-
+function greet(name) {
+  return "Greetings, dear " + name;
 }
 
-Greet (nameToGreet)
+console.log(greet(nameToGreet));

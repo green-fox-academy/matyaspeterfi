@@ -6,6 +6,6 @@ let abc:string[] = ["Arthur", "Boe", "Chloe"]
 
 let [first, second, third] = abc
 
-abc = [first, second, third] = [third, second, first]
+abc = [third, second, first];
 
 console.log(abc)

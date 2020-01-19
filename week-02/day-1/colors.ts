@@ -8,11 +8,12 @@
 // -  In `colors[2]` store the shades of pink:
 //    `"orchid", "violet", "pink", "hot pink"`
 
-let colors:string[][] = [["orchid", "violet", "pink", "hot pink"], ["orange red", "red", "tomato"],["orchid", "violet", "pink", "hot pink"]]
+let colors: string[][] = [
+["lime", "forest green", "olive", "pale green", "spring green"],
+["orange red", "red", "tomato"],
+["orchid", "violet", "pink", "hot pink"]
+]
 
 console.log(colors[0]);
 console.log(colors[1]);
 console.log(colors[2]);
-
-
-//note to self: the above exemplifies how one can store multiple values under a single index. Basically embed [] withn [], as per the above.

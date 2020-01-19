@@ -2,14 +2,10 @@
 // -  Create a function called `doubling` that doubles it's input parameter and returns with an integer
 // -  Log the result of `doubling(baseNum)` to the console
 
-let baseNum:number = 123;
+let baseNum: number = 123;
 
-function doubling (a){
-
-    let doubled:number = a * 2;
-
-    console.log(doubled)
-
+function doubling(a) {
+  return a * 2;
 }
 
-doubling(baseNum)
+console.log(doubling(baseNum));

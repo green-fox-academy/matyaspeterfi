@@ -7,15 +7,11 @@
 let animals: string[] = ["koal", "pand", "zebr"]
 
 
-animals.forEach(function (element: string, index: number) {
-     
-    
-    element += "a";
-    
-    animals[index] = element
+let fixedAnimals = animals.map(e => {
+    return e = `${e}a`;
 })
 
-console.log(animals);
+console.log(fixedAnimals);
 
 
 

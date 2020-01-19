@@ -7,13 +7,10 @@
 
 function factorio(input) {
     let f = 1
-    for (let i = 1; i <= input; i++ ){
-    
+    for (let i = 1; i <= input; i++) {
         f *= i;
     }
     return f
-
-
 }
 
 console.log(factorio(7))
