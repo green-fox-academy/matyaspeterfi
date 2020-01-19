@@ -25,10 +25,19 @@ for(let i:number = 0; i < names.length; i++){
     console.log(i + ". " + names[i]);
 };
 
-names.splice(1, 1)
+names.splice(1, 1);
 
-console.log(names)
+console.log(names);
 
-names.splice(0, 3)
+let namesReversed:string[] = names.reverse();
 
-console.log(names)
+console.log(namesReversed)
+
+for(let i = 0; i < names.length; i++){
+
+    console.log(namesReversed[i]);
+};
+
+names.splice(0, names.length);
+
+console.log(names);

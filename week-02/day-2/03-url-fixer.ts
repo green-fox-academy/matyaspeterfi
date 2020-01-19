@@ -5,26 +5,21 @@
 let url: string = 'https//www.reddit.com/r/nevertellmethebots';
 let urlAlt: string = 'https//www.reddit.com/r/nevertellmethebots';
 
-function replaceTwoOriginal(input){
+function replaceTwoOriginal(input) {
 
-    let array: string[] = input.split("");
-    array.splice(5, 0, ":")
-    let url2: string = array.join("")
-    let url3: string = url2.replace("bots", "odds")
+  let array: string[] = input.split("");
+  array.splice(5, 0, ":")
+  let url2: string = array.join("")
+  let url3: string = url2.replace("bots", "odds")
 
 
-    return url3;
+  return url3;
 };
 
 console.log(replaceTwoOriginal(url));
 
-function replaceTwo(input1, input2, input3){
-
-        let url2:string = input1.replace("https", input2);
-        let url3:string = url2.replace("bots", input3);
-
-
-    return url3;
+function replaceTwo(url, word1, word2) {
+  return url.replace("https", word1).replace("bots", word2);
 };
 
 console.log(replaceTwo(urlAlt, "https:", "odds"));

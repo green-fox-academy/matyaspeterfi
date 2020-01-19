@@ -18,10 +18,8 @@ let hashmap = {
 };
 
 
-for(let i:number = 0; i < notSoCrypticMessage.length; i++){
-
-    out = out + hashmap[notSoCrypticMessage[i]];
-
+for (let i: number = 0; i < notSoCrypticMessage.length; i++) {
+  out = out + hashmap[notSoCrypticMessage[i]];
 }
 
 console.log(out)
